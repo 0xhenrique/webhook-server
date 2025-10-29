@@ -67,7 +67,7 @@ func handleWebhook(w http.ResponseWriter, r *http.Request) {
 
 	// Execute deploy script
 	log.Printf("Executing deploy script: %s", deployScript)
-	cmd := exec.Command("/run/current-system/profile/bin/bash", deployScript)
+	cmd := exec.Command("/bin/bash", deployScript)
 	output, err := cmd.CombinedOutput()
 
 	if err != nil {
